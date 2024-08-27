@@ -2,7 +2,9 @@
 
 ##### Step 1: Update && Upgrade
 
--   **_sudo apt-get update && sudo apt-get upgrade -y_**
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
 
 ##### Step 2: Install Nginx
 
