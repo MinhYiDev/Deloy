@@ -2,22 +2,33 @@
 
 ##### Step 1: Update && Upgrade
 
--   **_sudo apt-get update && sudo apt-get upgrade -y_**
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
 
 ##### Step 2: Install Nginx
 
--   **_sudo apt-get install nginx -y_** : install nginx
+```bash
+sudo apt-get install nginx -y
+```
 
--   **_sudo systemctl status nginx_** : check status nginx
+-   Check status nginx
+
+```bash
+sudo systemctl status nginx
+```
 
 ##### Step 3: Install NodeJS
 
--   **_curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - &&\
-     sudo apt-get install -y nodejs_**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - &&\
+     sudo apt-get install -y nodejs
+```
 
--   **_cd_**
+```bash
+sudo npm install pm2@latest
+```
 
--   **_sudo npm install pm2@latest_**
 -   **_cd Project_**
     Example:
 -   **pm2 start --name="\_" build/index.js**
@@ -25,12 +36,13 @@
 ##### Step 4: Config Nginx
 
 -   **_sudo vim /etc/nginx/sites-available/<:name_variable1:>_**
-<pre>
+
+```bash
 server {
-   listen 80; 
-   server_name _;
+   listen 80;
+   server_name api.psang.click;
    location / {
-        proxy_pass http://localhost:<:custom:>;
+        proxy_pass http://localhost:3055;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -38,13 +50,19 @@ server {
         proxy_cache_bypass $http_upgrade;
    }
 }
-</pre>
+```
 
--   **_sudo ln -s /etc/nginx/sites-available/<:name_variable1:> /etc/nginx/sites-enabled/_**
+```bash
+sudo ln -s /etc/nginx/sites-available/<:name_variable1:> /etc/nginx/sites-enabled/
+```
 
--   **_sudo nginx -t_**
+```bash
+sudo nginx -t
+```
 
--   **_sudo systemctl restart nginx_**
+```bash
+sudo systemctl restart nginx
+```
 
 # React JS
 
