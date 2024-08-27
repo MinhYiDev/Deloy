@@ -6,7 +6,7 @@
 
 ##### Step 2: Install Nginx
 
--   **_sudo apt-get install nginx_** : install nginx
+-   **_sudo apt-get install nginx -y_** : install nginx
 
 -   **_sudo systemctl status nginx_** : check status nginx
 
