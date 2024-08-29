@@ -101,8 +101,8 @@ server {
 ### Domain and SSL setup
 
 <pre>
-sudo apt-get install certbot python3-certbot-nginx
-sudo certbot --nginx -d <domain-name>
+sudo apt-get install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d psang.click
 sudo systemctl reload nginx
 </pre>
 
