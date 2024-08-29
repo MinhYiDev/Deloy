@@ -26,7 +26,7 @@ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - &&\
 ```
 
 ```bash
-sudo npm install pm2@latest
+sudo npm i -g pm2@latest
 ```
 
 -   **_cd Project_**
